@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ludo game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #333;
+      margin-top: 20px;
+    }
+
+    #board {
+      display: grid;
+      grid-template-columns: repeat(5, 70px);
+      grid-gap: 5px;
+      margin: 20px auto;
+      width: fit-content;
+    }
+
+    .cell {
+      width: 70px;
+      height: 70px;
+      background-color: #87cefa;
+      border: 2px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: background-color 0.3s;
+    }
+
+    .cell.highlight {
+      background-color: #ffeeba;
+    }
+
+    .player1 {
+      width: 40px;
+      height: 40px;
+      background-color: red;
+      border-radius: 50%;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .player2 {
+      width: 40px;
+      height: 40px;
+      background-color: green;
+      border-radius: 50%;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    #controls {
+      margin: 20px;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin: 9px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+
+    .status {
+      font-size: 18px;
+      margin: 10px;
+    }
+
+    .status.player1 {
+      color: red;
+    }
+
+    .status.player2 {
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>ludo game</h1>
+  <div id="board"></div>
+  <div id="controls">
+    <p id="status" class="status">It's <span class="player1">player1  (Red)'s</span> turn.</p>
+    <button id="rollDice">Roll the Dice</button>
+    <p>dice result: <span id="diceResult">0</span></p>
+  </div>
+  <script src="main2.js"></script>
+</body>
+</html>
